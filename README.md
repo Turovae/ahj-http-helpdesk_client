@@ -11,6 +11,8 @@
 **Важно**: в данном ДЗ вам потребуется выполнить мини-проект. Мы понимаем, что он может занять чуть больше времени, чем обычные ДЗ, но тема HTTP настолько важна, что стоит уделить этому чуть больше времени.
 
 ---
+[![Build status](https://ci.appveyor.com/api/projects/status/tltydthgnjs34v0c?svg=true)](https://ci.appveyor.com/project/Turovae/ahj-http-helpdesk-client)
+---
 
 ### HelpDesk: Frontend
 
