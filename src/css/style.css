@@ -1,0 +1,70 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-size: 16px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: normal;
+}
+
+.helpdesk {
+  /* display: none; */
+  width: 500px;
+  margin: 0 auto;
+}
+
+.helpdesk-header {
+  text-align: right;
+  margin-top: 10px;
+}
+
+.add_ticket-form {
+  border: 1px solid #000;
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 15px 15px 5px;
+  border-radius: 20px;
+}
+
+.form-header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.form-row {
+  margin-bottom: 10px;
+}
+
+.form-hint {
+  display: block;
+  margin-bottom: 10px;
+}
+
+.form-input {
+  display: inline-block;
+  width: 100%;
+  padding: 5px;
+  outline: none;
+  border: 1px solid #000;
+  border-radius: 4px;
+}
+
+textarea.form-input {
+  resize: none;
+}
+
+.form-controls {
+  text-align: right;
+}
+
+.helpdesk-btn {
+  border: 1px solid #000;
+  padding: 5px 10px;
+  border-radius: 10px;
+  margin-left: 10px;
+  cursor: pointer;
+}
+
+.helpdesk-btn:hover {
+  background-color: #d9d9d9;
+}
