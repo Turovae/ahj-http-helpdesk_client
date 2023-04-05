@@ -1,4 +1,5 @@
 import Helpdesk from './components/Helpdesk/Helpdesk';
+import TicketForm from './components/TicketForm/TicketForm';
 // const ticketForm = document.querySelector('.add_ticket-form');
 // const titleEl = controllTicketform['ticket-title'];
 // const descriptionEl = controllTicketform['ticket-description'];
@@ -43,6 +44,8 @@ const url = 'http://localhost:7070';
 // });
 
 const helpdesk = new Helpdesk('.helpdesk');
+const ticketForm = new TicketForm();
+ticketForm.open();
 
 window.onload = (event) => {
   event.preventDefault();

@@ -63,6 +63,7 @@
   border-radius: 50%;
   vertical-align: middle;
   margin-left: 5px;
+  background-color: #fff;
 }
 
 .ticket-btn:hover {

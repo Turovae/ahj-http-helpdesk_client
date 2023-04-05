@@ -1,5 +1,6 @@
 /* eslint-disable import/no-extraneous-dependencies */
 import './ticket.css';
+
 const moment = require('moment');
 
 export default class Ticket {
