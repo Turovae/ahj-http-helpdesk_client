@@ -1,3 +1,5 @@
+import Ticket from '../Ticket/Ticket';
+
 export default class Helpdesk {
   constructor(element) {
     this.element = typeof element === 'string' ? document.querySelector(element) : element;
@@ -27,11 +29,12 @@ export default class Helpdesk {
   }
 
   renderTickets(tickets) {
-    tickets.forEach((ticket) => {
-      const ticketEl = document.createElement('li');
-      ticketEl.innerText = ticket.name;
+    tickets.forEach((param) => {
+      const ticket = new Ticket(param);
+      // ticketEl.innerText = ticket.name;
 
-      this.ticketsContainer.appendChild(ticketEl);
+      // this.ticketsContainer.appendChild(ticketEl);
+      ticket.appendTo(this.ticketsContainer);
     });
   }
 }

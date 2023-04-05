@@ -52,7 +52,6 @@ window.onload = (event) => {
   })
     .then((response) => response.json())
     .then((tickets) => {
-      console.log(tickets);
       helpdesk.renderTickets(tickets);
     });
 };
