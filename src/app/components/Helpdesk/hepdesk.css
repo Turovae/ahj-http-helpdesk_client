@@ -1,5 +1,5 @@
 .helpdesk {
-  width: 500px;
+  width: 700px;
   margin: 0 auto;
 }
 
@@ -7,4 +7,8 @@
   text-align: right;
   margin-top: 10px;
   margin-bottom: 20px;
+}
+
+.tickets-container {
+  list-style-type: none;
 }

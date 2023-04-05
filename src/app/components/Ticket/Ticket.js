@@ -1,7 +1,6 @@
 /* eslint-disable import/no-extraneous-dependencies */
+import './ticket.css';
 const moment = require('moment');
-// require('moment/locale/ru');
-// moment().format('YYYY-MM-DD');
 
 export default class Ticket {
   constructor(params) {
@@ -60,7 +59,7 @@ export default class Ticket {
     const createdTicketEl = document.createElement('div');
     createdTicketEl.classList.add('ticket-created');
     createdTicketEl.textContent = moment(this.params.created).format('DD.MM.YYYY HH:MM');
-    this.bodyEl.appendChild(createdTicketEl);
+    this.element.appendChild(createdTicketEl);
   }
 
   createAndAppendTicketControls() {
@@ -74,7 +73,7 @@ export default class Ticket {
 
   static createAndAppendBtn(container, content, className) {
     const button = document.createElement('button');
-    button.classList.add(className);
+    button.classList.add(className, 'ticket-btn');
     button.textContent = content;
     container.appendChild(button);
     return button;
