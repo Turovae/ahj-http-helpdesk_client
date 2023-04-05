@@ -1,0 +1,10 @@
+.helpdesk {
+  width: 500px;
+  margin: 0 auto;
+}
+
+.helpdesk-header {
+  text-align: right;
+  margin-top: 10px;
+  margin-bottom: 20px;
+}

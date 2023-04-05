@@ -7,17 +7,6 @@
   font-weight: normal;
 }
 
-.helpdesk {
-  /* display: none; */
-  width: 500px;
-  margin: 0 auto;
-}
-
-.helpdesk-header {
-  text-align: right;
-  margin-top: 10px;
-}
-
 .add_ticket-form {
   border: 1px solid #000;
   max-width: 400px;

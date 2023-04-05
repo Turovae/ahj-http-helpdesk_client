@@ -1,3 +1,4 @@
+import './hepdesk.css';
 import Ticket from '../Ticket/Ticket';
 
 export default class Helpdesk {

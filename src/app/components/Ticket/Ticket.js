@@ -69,7 +69,6 @@ export default class Ticket {
     this.element.appendChild(ticketControls);
 
     this.editBtn = Ticket.createAndAppendBtn(ticketControls, '✎', 'ticket-edit');
-
     this.deleteBtn = Ticket.createAndAppendBtn(ticketControls, 'x', 'ticket-delete');
   }
 
