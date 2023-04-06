@@ -1,6 +1,7 @@
 /* eslint-disable import/no-extraneous-dependencies */
 import './ticket.css';
 import TicketForm from '../TicketForm/TicketForm';
+import DeleleteModal from '../DeleteModal/DeleteModal';
 
 const moment = require('moment');
 
@@ -14,6 +15,7 @@ export default class Ticket {
     this.statusEl = null;
     this.bodyEl = null;
     this.descriptionEl = null;
+    this.modal = null;
 
     this.editBtn = null;
     this.deleteBtn = null;
@@ -23,6 +25,9 @@ export default class Ticket {
     this.closeDescription = this.closeDescription.bind(this);
     this.opentEditForm = this.opentEditForm.bind(this);
     this.editTicket = this.editTicket.bind(this);
+    this.openDelModal = this.openDelModal.bind(this);
+
+    this.delete = this.delete.bind(this);
 
     this.createEl();
   }
@@ -44,6 +49,7 @@ export default class Ticket {
     this.statusEl.addEventListener('change', this.changeStatus);
     this.bodyEl.addEventListener('click', this.openDescription);
     this.editBtn.addEventListener('click', this.opentEditForm);
+    this.deleteBtn.addEventListener('click', this.openDelModal);
   }
 
   appendTo(element) {
@@ -158,6 +164,24 @@ export default class Ticket {
     if (this.descriptionEl) {
       this.params.description = description;
       this.descriptionEl.textContent = description;
+    }
+  }
+
+  openDelModal(event) {
+    event.preventDefault();
+
+    this.modal = new DeleleteModal(this.delete);
+    this.modal.open();
+  }
+
+  async delete() {
+    const response = await fetch(`${this.url}/tickets/${this.params.id}`, {
+      method: 'DELETE',
+    });
+
+    if (response.ok) {
+      this.element.remove();
+      this.modal.close();
     }
   }
 

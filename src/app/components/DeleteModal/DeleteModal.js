@@ -10,6 +10,7 @@ export default class DeleleteModal {
 
     this.close = this.close.bind(this);
     this.open = this.open.bind(this);
+    this.submitForm = this.submitForm.bind(this);
 
     this.create();
   }
@@ -22,14 +23,14 @@ export default class DeleleteModal {
 
   registerEvents() {
     this.form.addEventListener('reset', this.close);
+    this.form.addEventListener('submit', this.submitForm);
   }
 
   open() {
     document.body.appendChild(this.wrapper);
   }
 
-  close(event) {
-    event.preventDefault();
+  close() {
     this.wrapper.remove();
   }
 
@@ -83,6 +84,12 @@ export default class DeleleteModal {
     });
 
     this.form.appendChild(row);
+  }
+
+  submitForm(event) {
+    event.preventDefault();
+
+    this.handler();
   }
 
   static createBtn(type, title, className) {
