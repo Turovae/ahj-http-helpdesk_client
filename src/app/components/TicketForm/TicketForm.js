@@ -52,7 +52,7 @@ export default class TicketForm {
     this.form.enctype = 'multipart/form-data';
     this.wrapper.appendChild(this.form);
 
-    this.createAndAppendHeader('Добавить тикет');
+    this.createAndAppendHeader(`${this.data ? 'Редактировать' : 'Добавить'} тикет`);
     this.createNameInput();
     this.createAndAppendRow('Краткое описание', [this.nameInput]);
     this.createDescriptionInput();
