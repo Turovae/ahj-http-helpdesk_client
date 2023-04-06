@@ -43,9 +43,9 @@ const url = 'http://localhost:7070';
 //   console.log(result);
 // });
 
-const helpdesk = new Helpdesk('.helpdesk');
-const ticketForm = new TicketForm();
-ticketForm.open();
+const helpdesk = new Helpdesk('.helpdesk', url);
+// const ticketForm = new TicketForm(url);
+// ticketForm.open();
 
 window.onload = (event) => {
   event.preventDefault();

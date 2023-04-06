@@ -64,3 +64,13 @@ textarea.form-input {
 .form-ctrl-btn:hover {
   background-color: #d9d9d9;
 }
+
+.err-message {
+  background-color: #df6d6d;
+  color: #fff;
+  position: absolute;
+  padding: 5px 10px;
+  top: 0;
+  width: 200px;
+  left: calc(50% - 100px);
+}

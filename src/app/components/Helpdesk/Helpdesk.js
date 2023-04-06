@@ -1,15 +1,21 @@
 import './hepdesk.css';
 import Ticket from '../Ticket/Ticket';
+import TicketForm from '../TicketForm/TicketForm';
 
 export default class Helpdesk {
-  constructor(element) {
+  constructor(element, url) {
     this.element = typeof element === 'string' ? document.querySelector(element) : element;
     if (!(this.element instanceof HTMLElement)) {
       throw new Error('Element is not DOM element');
     }
 
+    this.url = url;
+
     this.ticketsContainer = null;
     this.addTicketBtn = null;
+
+    this.addTicket = this.addTicket.bind(this);
+    this.openForm = this.openForm.bind(this);
 
     this.create();
   }
@@ -27,15 +33,27 @@ export default class Helpdesk {
     this.ticketsContainer = document.createElement('ul');
     this.ticketsContainer.classList.add('tickets-container');
     this.element.appendChild(this.ticketsContainer);
+
+    this.registerEvents();
+  }
+
+  registerEvents() {
+    this.addTicketBtn.addEventListener('click', this.openForm);
   }
 
   renderTickets(tickets) {
     tickets.forEach((param) => {
-      const ticket = new Ticket(param);
-      // ticketEl.innerText = ticket.name;
-
-      // this.ticketsContainer.appendChild(ticketEl);
-      ticket.appendTo(this.ticketsContainer);
+      this.addTicket(param);
     });
+  }
+
+  addTicket(param) {
+    const ticket = new Ticket(param, this.url);
+    ticket.appendTo(this.ticketsContainer);
+  }
+
+  openForm() {
+    const form = new TicketForm(this.url, this.addTicket);
+    form.open();
   }
 }
